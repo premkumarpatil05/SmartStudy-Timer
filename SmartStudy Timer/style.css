@@ -1,0 +1,121 @@
+:root {
+  --neon: #00f7ff;
+  --text: #ffffff;
+  --btn-bg: #111;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+}
+.dashboard {
+  background: #111;
+  border-radius: 25px;
+  box-shadow: 0 0 30px var(--neon);
+  padding: 40px 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.logo {
+  font-size: 1.8rem;
+  color: var(--neon);
+  text-shadow: 0 0 10px var(--neon);
+  margin: 0;
+  font-weight: bold;
+}
+.menu-toggle {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--neon);
+}
+.inputs { margin-top: 15px; }
+.inputs input {
+  width: 70px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 10px;
+  border: 2px solid var(--neon);
+  background: transparent;
+  color: var(--text);
+  font-weight: bold;
+  text-align: center;
+}
+.hidden-content { display: none; transition: 0.3s; }
+.show { display: block; }
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, rgba(0,247,255,0.2) 0%, rgba(0,0,0,0.9) 70%);
+  color: var(--neon);
+  font-size: 2.5rem;
+  font-weight: bold;
+  box-shadow: 0 0 30px var(--neon), inset 0 0 20px var(--neon);
+}
+.controls button, .controls span {
+  margin: 10px 5px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  background: var(--btn-bg);
+  color: var(--neon);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+  box-shadow: 0 0 15px var(--neon);
+  display: inline-block;
+}
+.controls button:hover { transform: scale(1.05) rotateZ(1deg); }
+.progress {
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  margin: 20px 0;
+}
+#bar {
+  height: 100%;
+  background: var(--neon);
+  width: 0%;
+  transition: width 1s linear;
+}
+#sessionTracker {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.session-log {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 0.85rem;
+  color: #ccc;
+  max-height: 100px;
+  overflow-y: auto;
+}
+@media (max-width: 420px) {
+  .header { flex-direction: row; }
+  .logo { font-size: 1.4rem; }
+  .circle { width: 160px; height: 160px; font-size: 2rem; }
+  .inputs input { width: 60px; font-size: 1rem; }
+  .controls button { padding: 10px 14px; font-size: 0.9rem; }
+}
